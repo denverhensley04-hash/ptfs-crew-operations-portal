@@ -16,6 +16,18 @@ const aircraftFleet = {
         premiumEconomy: 0,
         image: '✈️'
     },
+    a380: {
+        name: 'Airbus A380',
+        totalSeats: 172,
+        business: 0,
+        economy: 0,
+        premiumEconomy: 0,
+        upper: 82,
+        lower: 90,
+        crew: 2,
+        isDual: true,
+        image: '✈️'
+    },
     b747: {
         name: 'Boeing 747',
         totalSeats: 134,
@@ -89,32 +101,53 @@ function displayAircraftInfo(aircraftId) {
             </div>
     `;
     
-    if (aircraft.business > 0) {
+    // Special handling for A380 dual-deck layout
+    if (aircraft.isDual) {
         html += `
             <div class="cabin-info">
-                <label>Business Class</label>
-                <div class="seats" style="color: var(--sia-gold);">${aircraft.business}</div>
-                <span class="seat-badge business">First Class Seating</span>
+                <label>Upper Deck Passengers</label>
+                <div class="seats" style="color: var(--sia-gold);">${aircraft.upper}</div>
+                <span class="seat-badge business">Upper Deck</span>
+            </div>
+            <div class="cabin-info">
+                <label>Lower Deck Passengers</label>
+                <div class="seats" style="color: #10b981;">${aircraft.lower}</div>
+                <span class="seat-badge economy">Lower Deck</span>
+            </div>
+            <div class="cabin-info">
+                <label>Flight Crew</label>
+                <div class="seats" style="color: #6366f1;">${aircraft.crew}</div>
+                <span class="seat-badge" style="background: linear-gradient(135deg, #6366f1, #4f46e5); color: white;">Cockpit Crew</span>
             </div>
         `;
-    }
-    
-    html += `
-            <div class="cabin-info">
-                <label>Economy Class</label>
-                <div class="seats" style="color: #10b981;">${aircraft.economy}</div>
-                <span class="seat-badge economy">Standard Seating</span>
-            </div>
-    `;
-    
-    if (aircraft.premiumEconomy > 0) {
+    } else {
+        if (aircraft.business > 0) {
+            html += `
+                <div class="cabin-info">
+                    <label>Business Class</label>
+                    <div class="seats" style="color: var(--sia-gold);">${aircraft.business}</div>
+                    <span class="seat-badge business">First Class Seating</span>
+                </div>
+            `;
+        }
+        
         html += `
-            <div class="cabin-info">
-                <label>Premium Economy</label>
-                <div class="seats" style="color: #f59e0b;">${aircraft.premiumEconomy}</div>
-                <span class="seat-badge" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white;">Premium Seating</span>
-            </div>
+                <div class="cabin-info">
+                    <label>Economy Class</label>
+                    <div class="seats" style="color: #10b981;">${aircraft.economy}</div>
+                    <span class="seat-badge economy">Standard Seating</span>
+                </div>
         `;
+        
+        if (aircraft.premiumEconomy > 0) {
+            html += `
+                <div class="cabin-info">
+                    <label>Premium Economy</label>
+                    <div class="seats" style="color: #f59e0b;">${aircraft.premiumEconomy}</div>
+                    <span class="seat-badge" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white;">Premium Seating</span>
+                </div>
+            `;
+        }
     }
     
     html += `</div>`;
