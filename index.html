@@ -18,14 +18,33 @@
 
         <!-- Flight Information Panel -->
         <section class="flight-panel">
-            <h2>Scheduled Flight Route</h2>
+            <h2>📋 Flight Information</h2>
+            <div class="flight-header">
+                <div class="flight-number-box">
+                    <label>Flight Number</label>
+                    <span class="flight-number">SQ340</span>
+                </div>
+                <div class="flight-number-box">
+                    <label>Tail Number</label>
+                    <span class="tail-number">9V-SMA</span>
+                </div>
+                <div class="flight-number-box">
+                    <label>Aircraft Type</label>
+                    <span class="aircraft-type">Airbus A350-900</span>
+                </div>
+            </div>
+            
             <div class="flight-details">
                 <div class="detail-item">
-                    <label>Route</label>
-                    <span>Greater Rockford ➔ Tokyo (Orenji)</span>
+                    <label>Departure</label>
+                    <span>Greater Rockford (Runway 19)</span>
                 </div>
                 <div class="detail-item">
-                    <label>Departure</label>
+                    <label>Arrival</label>
+                    <span>Tokyo/Orenji (Runway 34L)</span>
+                </div>
+                <div class="detail-item">
+                    <label>Departure Time</label>
                     <span id="departure-time">Sunday @ 3:40 PM</span>
                 </div>
                 <div class="detail-item">
@@ -35,9 +54,281 @@
             </div>
         </section>
 
-        <!-- Aircraft Selection & Info -->
+        <!-- Weather & Runway Status -->
+        <section class="weather-section">
+            <h2>🌤️ Weather & Runway Status</h2>
+            <div class="weather-grid">
+                <div class="weather-card departure">
+                    <h3>Departure Airport</h3>
+                    <div class="airport-info">
+                        <label>Location</label>
+                        <span class="airport-name">Greater Rockford</span>
+                    </div>
+                    <div class="weather-detail">
+                        <label>Runway</label>
+                        <span>19</span>
+                    </div>
+                    <div class="weather-detail">
+                        <label>Conditions</label>
+                        <span class="condition-clear">Clear Skies</span>
+                    </div>
+                    <div class="weather-detail">
+                        <label>Wind</label>
+                        <span>240° / 8kt</span>
+                    </div>
+                </div>
+                
+                <div class="weather-card arrival">
+                    <h3>Arrival Airport</h3>
+                    <div class="airport-info">
+                        <label>Location</label>
+                        <span class="airport-name">Tokyo/Orenji</span>
+                    </div>
+                    <div class="weather-detail">
+                        <label>Runway</label>
+                        <span>34L</span>
+                    </div>
+                    <div class="weather-detail">
+                        <label>Approach</label>
+                        <span class="condition-clear">Visual Approach</span>
+                    </div>
+                    <div class="weather-detail">
+                        <label>Status</label>
+                        <span class="status-ready">Ready for Arrival</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Route Map -->
+        <section class="route-section">
+            <h2>🗺️ Flight Route</h2>
+            <div class="route-map">
+                <div class="route-waypoint">
+                    <div class="waypoint-marker departure"></div>
+                    <div class="waypoint-label">Greater Rockford</div>
+                </div>
+                <div class="route-line"></div>
+                <div class="route-waypoint">
+                    <div class="waypoint-marker"></div>
+                    <div class="waypoint-label">Waypoint Alpha</div>
+                </div>
+                <div class="route-line"></div>
+                <div class="route-waypoint">
+                    <div class="waypoint-marker"></div>
+                    <div class="waypoint-label">Waypoint Bravo</div>
+                </div>
+                <div class="route-line"></div>
+                <div class="route-waypoint">
+                    <div class="waypoint-marker"></div>
+                    <div class="waypoint-label">Oceanic Cruise</div>
+                </div>
+                <div class="route-line"></div>
+                <div class="route-waypoint">
+                    <div class="waypoint-marker arrival"></div>
+                    <div class="waypoint-label">Tokyo/Orenji</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Crew Manifest -->
+        <section class="crew-section">
+            <h2>👥 Crew Manifest</h2>
+            <div class="crew-manifest">
+                <div class="crew-member">
+                    <div class="crew-icon">👨‍✈️</div>
+                    <div class="crew-info">
+                        <label>Captain</label>
+                        <span>Pilot in Command (PIC)</span>
+                    </div>
+                </div>
+                <div class="crew-member">
+                    <div class="crew-icon">👨‍✈️</div>
+                    <div class="crew-info">
+                        <label>Co-Pilot</label>
+                        <span>Second Officer</span>
+                    </div>
+                </div>
+                <div class="crew-member">
+                    <div class="crew-icon">🎙️</div>
+                    <div class="crew-info">
+                        <label>Rockford Tower Controller</label>
+                        <span>ATC Departure</span>
+                    </div>
+                </div>
+                <div class="crew-member">
+                    <div class="crew-icon">🎙️</div>
+                    <div class="crew-info">
+                        <label>Tokyo Approach Controller</label>
+                        <span>ATC Arrival</span>
+                    </div>
+                </div>
+                <div class="crew-member">
+                    <div class="crew-icon">👩‍✈️</div>
+                    <div class="crew-info">
+                        <label>Cabin Crew #1</label>
+                        <span>Flight Service</span>
+                    </div>
+                </div>
+                <div class="crew-member">
+                    <div class="crew-icon">👩‍✈️</div>
+                    <div class="crew-info">
+                        <label>Cabin Crew #2</label>
+                        <span>Flight Service</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seating Chart -->
+        <section class="seating-section">
+            <h2>🪑 Seating Chart - Airbus A350-900 (SQ340)</h2>
+            <div class="seating-info">
+                <div class="seating-stats">
+                    <div class="seat-stat">
+                        <label>Total Seats</label>
+                        <span class="total-seats">106</span>
+                    </div>
+                    <div class="seat-stat">
+                        <label>Business Class</label>
+                        <span class="business-seats">41 seats (Rows 1–11)</span>
+                    </div>
+                    <div class="seat-stat">
+                        <label>Economy Class</label>
+                        <span class="economy-seats">65 seats (Rows 12–25)</span>
+                    </div>
+                </div>
+                <div class="seating-visual">
+                    <div class="cabin-section business-section">
+                        <h4>Business Class (1-2-1 Configuration)</h4>
+                        <div class="seat-grid business-grid">
+                            <div class="seat-row">
+                                <span class="row-label">1</span>
+                                <div class="seats">
+                                    <div class="seat business" title="1A"></div>
+                                    <div class="aisle"></div>
+                                    <div class="seat business" title="1F"></div>
+                                </div>
+                            </div>
+                            <div class="seat-row">
+                                <span class="row-label">2</span>
+                                <div class="seats">
+                                    <div class="seat business" title="2A"></div>
+                                    <div class="aisle"></div>
+                                    <div class="seat business" title="2F"></div>
+                                </div>
+                            </div>
+                            <div class="seat-row">
+                                <span class="row-label">3</span>
+                                <div class="seats">
+                                    <div class="seat business" title="3A"></div>
+                                    <div class="aisle"></div>
+                                    <div class="seat business" title="3F"></div>
+                                </div>
+                            </div>
+                            <div class="seat-row">
+                                <span class="row-label">4</span>
+                                <div class="seats">
+                                    <div class="seat business" title="4A"></div>
+                                    <div class="aisle"></div>
+                                    <div class="seat business" title="4F"></div>
+                                </div>
+                            </div>
+                            <div class="seat-row">
+                                <span class="row-label">5</span>
+                                <div class="seats">
+                                    <div class="seat business" title="5A"></div>
+                                    <div class="aisle"></div>
+                                    <div class="seat business" title="5F"></div>
+                                </div>
+                            </div>
+                            <div class="seat-row truncated">
+                                <span class="row-label">...</span>
+                                <div class="seats">
+                                    <span style="font-size: 12px; color: #94a3b8;">Rows 6–11 (Additional 12 seats)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="cabin-section economy-section">
+                        <h4>Economy Class (3-3-3 Configuration)</h4>
+                        <div class="seat-grid economy-grid">
+                            <div class="seat-row">
+                                <span class="row-label">12</span>
+                                <div class="seats">
+                                    <div class="seat economy" title="12A"></div>
+                                    <div class="seat economy" title="12B"></div>
+                                    <div class="seat economy" title="12C"></div>
+                                    <div class="aisle"></div>
+                                    <div class="seat economy" title="12D"></div>
+                                    <div class="seat economy" title="12E"></div>
+                                    <div class="seat economy" title="12F"></div>
+                                </div>
+                            </div>
+                            <div class="seat-row">
+                                <span class="row-label">13</span>
+                                <div class="seats">
+                                    <div class="seat economy" title="13A"></div>
+                                    <div class="seat economy" title="13B"></div>
+                                    <div class="seat economy" title="13C"></div>
+                                    <div class="aisle"></div>
+                                    <div class="seat economy" title="13D"></div>
+                                    <div class="seat economy" title="13E"></div>
+                                    <div class="seat economy" title="13F"></div>
+                                </div>
+                            </div>
+                            <div class="seat-row">
+                                <span class="row-label">14</span>
+                                <div class="seats">
+                                    <div class="seat economy" title="14A"></div>
+                                    <div class="seat economy" title="14B"></div>
+                                    <div class="seat economy" title="14C"></div>
+                                    <div class="aisle"></div>
+                                    <div class="seat economy" title="14D"></div>
+                                    <div class="seat economy" title="14E"></div>
+                                    <div class="seat economy" title="14F"></div>
+                                </div>
+                            </div>
+                            <div class="seat-row">
+                                <span class="row-label">15</span>
+                                <div class="seats">
+                                    <div class="seat economy" title="15A"></div>
+                                    <div class="seat economy" title="15B"></div>
+                                    <div class="seat economy" title="15C"></div>
+                                    <div class="aisle"></div>
+                                    <div class="seat economy" title="15D"></div>
+                                    <div class="seat economy" title="15E"></div>
+                                    <div class="seat economy" title="15F"></div>
+                                </div>
+                            </div>
+                            <div class="seat-row">
+                                <span class="row-label">16</span>
+                                <div class="seats">
+                                    <div class="seat economy" title="16A"></div>
+                                    <div class="seat economy" title="16B"></div>
+                                    <div class="seat economy" title="16C"></div>
+                                    <div class="aisle"></div>
+                                    <div class="seat economy" title="16D"></div>
+                                    <div class="seat economy" title="16E"></div>
+                                    <div class="seat economy" title="16F"></div>
+                                </div>
+                            </div>
+                            <div class="seat-row truncated">
+                                <span class="row-label">...</span>
+                                <div class="seats">
+                                    <span style="font-size: 12px; color: #94a3b8;">Rows 17–25 (Additional 36 seats)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aircraft Fleet -->
         <section class="aircraft-section">
-            <h2>Aircraft Fleet</h2>
+            <h2>✈️ Aircraft Fleet</h2>
             <div class="aircraft-selector">
                 <div class="aircraft-list">
                     <button class="aircraft-btn active" data-aircraft="a330" onclick="selectAircraft('a330')">
@@ -46,8 +337,14 @@
                     <button class="aircraft-btn" data-aircraft="a350" onclick="selectAircraft('a350')">
                         Airbus A350
                     </button>
+                    <button class="aircraft-btn" data-aircraft="a380" onclick="selectAircraft('a380')">
+                        Airbus A380
+                    </button>
                     <button class="aircraft-btn" data-aircraft="b747" onclick="selectAircraft('b747')">
                         Boeing 747
+                    </button>
+                    <button class="aircraft-btn" data-aircraft="b777" onclick="selectAircraft('b777')">
+                        Boeing 777
                     </button>
                     <button class="aircraft-btn" data-aircraft="b787" onclick="selectAircraft('b787')">
                         Boeing 787
@@ -106,7 +403,7 @@
         <!-- Footer -->
         <footer>
             Pilot Training Flight Simulator Operations Group • Restricted Distribution<br/>
-            Singapore Airlines | PTFS v2.0
+            Singapore Airlines | PTFS v3.0 | Flight SQ340 (9V-SMA) | Airbus A350-900
         </footer>
     </div>
 
