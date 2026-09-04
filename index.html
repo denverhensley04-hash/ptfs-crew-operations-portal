@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTFS Crew Operations Portal - Singapore Airlines</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-section">
+                <h1>✈️ Singapore Airlines</h1>
+                <p class="subtitle">Pilot Training Flight Simulator - Crew Operations Portal</p>
+            </div>
+        </header>
+
+        <!-- Flight Information Panel -->
+        <section class="flight-panel">
+            <h2>Scheduled Flight Route</h2>
+            <div class="flight-details">
+                <div class="detail-item">
+                    <label>Route</label>
+                    <span>Greater Rockford ➔ Tokyo (Orenji)</span>
+                </div>
+                <div class="detail-item">
+                    <label>Departure</label>
+                    <span id="departure-time">Sunday @ 3:40 PM</span>
+                </div>
+                <div class="detail-item">
+                    <label>Time Until Departure</label>
+                    <span id="live-timer">Calculating...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aircraft Selection & Info -->
+        <section class="aircraft-section">
+            <h2>Aircraft Fleet</h2>
+            <div class="aircraft-selector">
+                <div class="aircraft-list">
+                    <button class="aircraft-btn active" data-aircraft="a330" onclick="selectAircraft('a330')">
+                        Airbus A330
+                    </button>
+                    <button class="aircraft-btn" data-aircraft="a350" onclick="selectAircraft('a350')">
+                        Airbus A350
+                    </button>
+                    <button class="aircraft-btn" data-aircraft="b747" onclick="selectAircraft('b747')">
+                        Boeing 747
+                    </button>
+                    <button class="aircraft-btn" data-aircraft="b787" onclick="selectAircraft('b787')">
+                        Boeing 787
+                    </button>
+                    <button class="aircraft-btn" data-aircraft="b707" onclick="selectAircraft('b707')">
+                        Boeing 707
+                    </button>
+                    <button class="aircraft-btn" data-aircraft="b737" onclick="selectAircraft('b737')">
+                        Boeing 737
+                    </button>
+                </div>
+            </div>
+
+            <!-- Aircraft Details -->
+            <div class="aircraft-details">
+                <div id="aircraft-info" class="aircraft-info">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Crew Authentication Panel -->
+        <section class="auth-section">
+            <h2>🔒 Staff Private Operations Portal</h2>
+            <p class="auth-notice">This console is restricted to active flight crew. Please enter the operational password.</p>
+            
+            <div id="gate-lock" class="lock-gate">
+                <input 
+                    type="password" 
+                    id="gate-pass-field" 
+                    class="password-input" 
+                    placeholder="Enter operational password"
+                />
+                <button onclick="verifyCrewGateway()" class="lock-btn">Verify</button>
+                <div id="gate-error" class="error-msg">Invalid operational security credentials. Access denied.</div>
+            </div>
+
+            <!-- Secure Crew Form (Hidden) -->
+            <div id="gate-form-panel" class="secure-form-container">
+                <form id="crew-form">
+                    <div class="form-group">
+                        <label for="callsign">Crew Callsign / Username</label>
+                        <input type="text" id="callsign" name="callsign" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Operational Message / Report</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Dispatch Secure Transmit to Director</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            Pilot Training Flight Simulator Operations Group • Restricted Distribution<br/>
+            Singapore Airlines | PTFS v2.0
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

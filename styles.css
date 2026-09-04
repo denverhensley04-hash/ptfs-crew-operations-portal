@@ -1,0 +1,383 @@
+:root {
+    --sia-navy: #002244;
+    --sia-gold: #d4af37;
+    --text-primary: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #cbd5e1;
+    --bg-light: #f8fafc;
+    --success-green: #10b981;
+    --error-red: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #002244 0%, #003d7a 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 34, 68, 0.3);
+    overflow: hidden;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, var(--sia-navy) 0%, #003d7a 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+    border-bottom: 3px solid var(--sia-gold);
+}
+
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.header .subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+}
+
+/* Sections */
+section {
+    padding: 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: var(--sia-navy);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Flight Panel */
+.flight-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.detail-item {
+    background: var(--bg-light);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--sia-gold);
+}
+
+.detail-item label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.detail-item span {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Aircraft Section */
+.aircraft-selector {
+    margin-bottom: 30px;
+}
+
+.aircraft-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.aircraft-btn {
+    background: white;
+    border: 2px solid var(--border-color);
+    padding: 14px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.aircraft-btn:hover {
+    border-color: var(--sia-navy);
+    color: var(--sia-navy);
+    background: var(--bg-light);
+}
+
+.aircraft-btn.active {
+    background: var(--sia-navy);
+    color: white;
+    border-color: var(--sia-navy);
+    box-shadow: 0 4px 12px rgba(0, 34, 68, 0.2);
+}
+
+/* Aircraft Details */
+.aircraft-details {
+    background: var(--bg-light);
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.aircraft-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.aircraft-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--sia-gold);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.aircraft-card h3 {
+    font-size: 18px;
+    color: var(--sia-navy);
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.cabin-info {
+    margin-bottom: 16px;
+}
+
+.cabin-info label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.cabin-info .seats {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--sia-navy);
+}
+
+.seat-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--sia-navy), #003d7a);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.seat-badge.business {
+    background: linear-gradient(135deg, var(--sia-gold), #c4a547);
+    color: var(--sia-navy);
+}
+
+.seat-badge.economy {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+/* Authentication Section */
+.auth-section {
+    background: #f0f7ff;
+}
+
+.auth-notice {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.lock-gate {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.password-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: monospace;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.password-input:focus {
+    border-color: var(--sia-navy);
+    box-shadow: 0 0 0 3px rgba(0, 34, 68, 0.05);
+}
+
+.lock-btn {
+    background-color: var(--sia-navy);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.lock-btn:hover {
+    background-color: #00152c;
+}
+
+.error-msg {
+    color: var(--error-red);
+    font-size: 12px;
+    margin-top: 10px;
+    display: none;
+    font-weight: 700;
+    text-align: left;
+}
+
+/* Secure Form Container */
+.secure-form-container {
+    display: none;
+    background: white;
+    border: 1px solid var(--border-color);
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    background-color: white;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--sia-navy);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(0, 34, 68, 0.05);
+}
+
+.btn-submit {
+    background-color: var(--sia-navy);
+    color: white;
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-submit:hover {
+    background-color: #00152c;
+}
+
+/* Footer */
+footer {
+    background: var(--bg-light);
+    padding: 20px 30px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        border-radius: 0;
+    }
+
+    .header {
+        padding: 30px 20px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .aircraft-list {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .lock-gate {
+        flex-direction: column;
+    }
+
+    .lock-btn {
+        width: 100%;
+    }
+}
